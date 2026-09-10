@@ -8,7 +8,7 @@ if not defined msg set /p msg=Commit message (English, e.g. feat day1 variables)
 if not defined msg set "msg=study: daily commit"
 "C:\Program Files\Git\cmd\git.exe" add .
 "C:\Program Files\Git\cmd\git.exe" commit -m "%msg%"
-if errorlevel 1 echo [WARN] nothing to commit - no code changes found
+if errorlevel 1 echo [INFO] normal - no code changes today, nothing to commit
 echo.
 echo ---- pushing to GitHub ----
 "C:\Program Files\Git\cmd\git.exe" push
