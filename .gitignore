@@ -1,0 +1,31 @@
+# Java / Maven / IDEA 需要忽略的文件，不要提交到 GitHub
+
+# 编译产物
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDEA 配置
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse / VSCode
+.classpath
+.project
+.settings/
+.vscode/
+
+# 日志与临时文件
+*.log
+*.tmp
+*.bak
+
+# 系统文件
+Thumbs.db
+.DS_Store
