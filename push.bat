@@ -1,26 +1,26 @@
 @echo off
-chcp 65001 >nul
+chcp 936 >nul
 cd /d D:\code\java-study
 echo ============================================
-echo   è¡¥æ¨é€ï¼ˆç½‘ç»œå¥½äº†ä»¥ååŒå‡»è¿™ä¸ªï¼‰
+echo   ²¹ÍÆËÍ - ÍøÂçºÃÁËÒÔºóË«»÷Õâ¸ö
 echo ============================================
 "C:\Program Files\Git\cmd\git.exe" push
 if errorlevel 1 goto tryproxy
 echo.
-echo [æˆåŠŸ] å·²åŒæ­¥åˆ° GitHub^!
+echo [OK] ÒÑÍ¬²½µ½ GitHub
 goto done
 :tryproxy
 echo.
-echo [æç¤º] ç›´è¿ä¸é€šï¼Œæ”¹ç”¨ä»£ç†é‡è¯•...
+echo [INFO] Ö±Á¬²»Í¨, ¸ÄÓÃ´úÀíÖØÊÔ...
 "C:\Program Files\Git\cmd\git.exe" -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push
 if errorlevel 1 goto failed
 echo.
-echo [æˆåŠŸ] å·²é€šè¿‡ä»£ç†åŒæ­¥åˆ° GitHub^!
+echo [OK] ÒÑÍ¨¹ı´úÀíÍ¬²½µ½ GitHub
 goto done
 :failed
 echo.
-echo [æç¤º] æ²¡è¿ä¸Šã€‚æ£€æŸ¥ Clash Verge ^/ æ¢ç½‘ç»œ ^/ æ™šç‚¹å†è¯•ã€‚
-echo [æ”¾å¿ƒ] ä»£ç å’Œæäº¤éƒ½åœ¨æœ¬åœ°ï¼Œä¸ä¼šä¸¢ã€‚
+echo [FAIL] Ã»Á¬ÉÏ. ¼ì²é Clash Verge / »»ÍøÂç / ÍíµãÔÙÊÔ.
+echo [·ÅĞÄ] ´úÂëºÍÌá½»¶¼ÔÚ±¾µØ, ²»»á¶ª.
 :done
 echo.
 pause

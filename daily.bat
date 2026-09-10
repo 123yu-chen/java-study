@@ -1,34 +1,36 @@
 @echo off
-chcp 65001 >nul
+chcp 936 >nul
 cd /d D:\code\java-study
 echo ============================================
-echo   æ¯æ—¥æäº¤ï¼ˆå…ˆæŠŠ IDEA é‡Œçš„ä»£ç ä¿å­˜å¥½ï¼‰
+echo   Ã¿ÈÕÌá½» - ÏÈ°Ñ IDEA ÀïµÄ´úÂë±£´æºÃ
 echo ============================================
 "C:\Program Files\Git\cmd\git.exe" add .
-set /p msg=è¾“å…¥ä»Šå¤©çš„æäº¤è¯´æ˜(å»ºè®®è‹±æ–‡,å¦‚: feat day1 variables) : 
+set "msg=%~1"
+set /p msg=ÊäÈë½ñÌìµÄÌá½»ËµÃ÷(½¨ÒéÓ¢ÎÄ, Èç: feat day1) : 
+if not defined msg set "msg=study: daily commit"
 "C:\Program Files\Git\cmd\git.exe" commit -m "%msg%"
-if errorlevel 1 echo [æç¤º] æ²¡æœ‰æ£€æµ‹åˆ°ä»£ç æ”¹åŠ¨ï¼Œä»Šå¤©æ²¡ä¸œè¥¿å¯æäº¤
+if errorlevel 1 echo [WARN] Ã»ÓĞ¼ì²âµ½´úÂë¸Ä¶¯, ½ñÌìÃ»¶«Î÷¿ÉÌá½»
 echo.
-echo ---- æ­£åœ¨æ¨é€åˆ° GitHub ----
+echo ---- ÍÆËÍµ½ GitHub ----
 "C:\Program Files\Git\cmd\git.exe" push
 if errorlevel 1 goto tryproxy
 echo.
-echo [æˆåŠŸ] å·²åŒæ­¥åˆ° GitHub^!
+echo [OK] ÒÑÍ¬²½µ½ GitHub
 goto done
 :tryproxy
 echo.
-echo [æç¤º] ç›´è¿ä¸é€šï¼Œæ”¹ç”¨ä»£ç†é‡è¯•...
+echo [INFO] Ö±Á¬²»Í¨, ¸ÄÓÃ´úÀíÖØÊÔ...
 "C:\Program Files\Git\cmd\git.exe" -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push
 if errorlevel 1 goto failed
 echo.
-echo [æˆåŠŸ] å·²é€šè¿‡ä»£ç†åŒæ­¥åˆ° GitHub^!
+echo [OK] ÒÑÍ¨¹ı´úÀíÍ¬²½µ½ GitHub
 goto done
 :failed
 echo.
-echo [æç¤º] ä¸¤ç§æ–¹å¼éƒ½æ²¡è¿ä¸Šã€‚ä½†ä½ çš„ä»£ç å’Œæäº¤è®°å½•éƒ½åœ¨æœ¬åœ°ï¼Œç»å¯¹ä¸ä¼šä¸¢ï¼
-echo [åŠæ³•1] æ£€æŸ¥ Clash Verge æ˜¯ä¸æ˜¯å…³æ‰äº†
-echo [åŠæ³•2] æ¢ä¸ªç½‘ç»œå†è¯•ï¼ˆæ‰‹æœºçƒ­ç‚¹å¾€å¾€æœ€æœ‰æ•ˆï¼‰
-echo [åŠæ³•3] æ™šç‚¹å†åŒå‡»è¿™ä¸ªè„šæœ¬
+echo [FAIL] Á½ÖÖ·½Ê½¶¼Ã»Á¬ÉÏ, µ«´úÂëºÍÌá½»¶¼ÔÚÄãµçÄÔ±¾µØ, ²»»á¶ª!
+echo [°ì·¨1] ¼ì²é Clash Verge ÊÇ·ñ¿ª×Å
+echo [°ì·¨2] »»¸öÍøÂçÔÙÊÔ(ÊÖ»úÈÈµãÍùÍù×îÓĞĞ§)
+echo [°ì·¨3] ÍíµãÔÙË«»÷Õâ¸ö½Å±¾
 :done
 echo.
 pause
