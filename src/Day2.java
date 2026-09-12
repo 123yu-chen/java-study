@@ -50,6 +50,7 @@ public class Day2 {
             System.out.println("输入错误！请输入100~999的整数");
             sca.close();
             return;
+            }
 
         // 拆分逻辑（正确无问题）
         int hundred=num/100;       // 百位
@@ -61,10 +62,10 @@ public class Day2 {
         //时间换算
         Scanner sc=new Scanner(System.in);
         System.out.println("请输入时间（秒）：");
-        int secands=sc.nextInt();
-        int hour=secands/3600;
-        int minute=(secands%3600)/60;
-        int second=secands%60;
+        int seconds=sc.nextInt();
+        int hour=seconds/3600;
+        int minute=(seconds%3600)/60;
+        int second=seconds%60;
         System.out.println("时间换算结果为："+hour+"小时"+minute+"分"+second+"秒");
         sc.close();
 
